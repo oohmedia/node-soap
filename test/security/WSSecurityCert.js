@@ -189,7 +189,7 @@ describe('WSSecurityCert', function () {
     );
     xml.should.containEql('<ds:SignedInfo>');
   });
-  it('should contain a provided prefix when signerOptions.existingPrefixes is provided', function () {
+  it('should throw an error when signerOptions.location.action is "after"', function () {
     var instance = new WSSecurityCert(key, cert, '', {
       signerOptions: {
         location: { action: 'after' },
@@ -201,9 +201,6 @@ describe('WSSecurityCert', function () {
         'soap'
       );
     }.should.throw('signerOptions.location.action = "append" is not supported'));
-    // xml.should.containEql(
-    //   '<wsse:SecurityTokenReference xmlns:wsse="https://localhost/node-soap.xsd">'
-    // );
   });
   it('should contain the prefix to the generated Signature tags', function () {
     var instance = new WSSecurityCert(key, cert, '', {
