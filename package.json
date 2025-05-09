@@ -6,7 +6,7 @@
     "node": ">10.0.0"
   },
   "dependencies": {
-    "@types/request": "^2.48.4",
+    "@types/request": "^2.48.5",
     "concat-stream": "^2.0.0",
     "debug": "^4.1.1",
     "httpntlm": "^1.5.2",
